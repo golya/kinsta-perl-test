@@ -6,13 +6,13 @@ use IO::Socket::INET;
 print "Start...";
 
 my $socket = IO::Socket::INET->new(
-    LocalPort => 443,
+    LocalPort => 8080,
     Type      => SOCK_STREAM,
     ReuseAddr => 1,
     Listen    => 10,
 ) or die "Cannot create socket: $!";
 
-print "Server listening on port 443...\n";
+print "Server listening on port 8080...\n";
 
 while (my $client_socket = $socket->accept()) {
     my $request = <$client_socket>;
